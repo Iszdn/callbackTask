@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //3.Istenilen sayda gelen datalarin tek olanlarinin toplamini tapan Js function yazin.Call back istifade edeceksiz.
+      function tekToplama(...numbers) {
+        let array = [...numbers];
+        let toplam = 0;
+        for (let index = 0; index < array.length; index++) {
+          if (array[index] % 2 !== 0) {
+            toplam += array[index];
+          }
+        }
+        return toplam;
+      }
+      function Birlesme(callback, ...numbers) {
+        return callback(...numbers);
+      }
+
+      console.log(Birlesme(tekToplama, 12, 2, 3, 4, 15, 6, 1, 7));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ //4.Istenilen sayda gelen datalarin cut olanlarin toplamini tek olanlarinin toplamina olan hasilini tapan Js function yazin.Call back istifade edeceksiz
+ function umumiHasil(...numbers) {
+    let array=[...numbers];
+    let tekSum=0;
+    let cutSum=0;
+    for (let index = 0; index < array.length; index++) {
+        if (array[index] % 2 === 0) {
+            cutSum += array[index];
+          }
+          else if(array[index] % 2 !== 0){
+            tekSum+=array[index];
+          }
+    }
+    return cutSum * tekSum
+ }
+ function Hasil(callback,...numbers) {
+    return callback(...numbers);
+ }
+console.log(Hasil(umumiHasil,1,2,3,4,5,6,12,13));
+    </script>
+</body>
+</html>
